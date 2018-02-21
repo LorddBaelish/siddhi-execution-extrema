@@ -153,6 +153,14 @@
                     <destFile>${sonar.jacoco.reportPath}</destFile>
                     <append>true</append>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
