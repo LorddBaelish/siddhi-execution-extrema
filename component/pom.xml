@@ -120,6 +120,12 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+                <configuration>
+                  <!-- Sets the path to the file which contains the execution data. -->
+                  <destFile>${jacoco.execution.file}</destFile>
+                  <dataFile>${jacoco.execution.file}</dataFile>
+                  <propertyName>surefireArgLine</propertyName>
+                </configuration>
                 <executions>
                     <!--
                         Prepares the property pointing to the JaCoCo runtime agent which
