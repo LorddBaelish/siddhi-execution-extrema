@@ -56,9 +56,8 @@
         <jacoco.version>0.7.9</jacoco.version>
         <mavan.findbugsplugin.exclude.file>findbugs-exclude.xml</mavan.findbugsplugin.exclude.file>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
         <sonar.jacoco.itreportPath>${project.basedir}/target/coverage-reports/jacoco-it.exec</sonar.jacoco.itreportPath>
-        <jacoco.execution.file>${project.build.directory}/jacoco.exec</jacoco.execution.file>
     </properties>
 
     <scm>
@@ -145,31 +144,6 @@
             </extension>
         </extensions>
         <plugins>
-        <plugin>
-              <groupId>org.jacoco</groupId>
-              <artifactId>jacoco-maven-plugin</artifactId>
-              <version>${jacoco.version}</version>
-              <configuration>
-                <!-- Sets the path to the file which contains the execution data. -->
-                <destFile>${jacoco.execution.file}</destFile>
-                <dataFile>${jacoco.execution.file}</dataFile>
-                <propertyName>surefireArgLine</propertyName>
-              </configuration>
-              <executions>
-                <execution>
-                  <goals>
-                    <goal>prepare-agent</goal>
-                  </goals>
-                </execution>
-                <execution>
-                  <id>report</id>
-                  <phase>prepare-package</phase>
-                  <goals>
-                    <goal>report</goal>
-                  </goals>
-                </execution>
-              </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
