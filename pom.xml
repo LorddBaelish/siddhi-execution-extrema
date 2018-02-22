@@ -158,6 +158,15 @@
                   <goals>
                     <goal>prepare-agent</goal>
                   </goals>
+                  <configuration>
+                      <!-- Sets the path to the file which contains the execution data. -->
+                      <destFile>${project.build.directory}${jacoco.execution.file}</destFile>
+                      <!--
+                          Sets the name of the property containing the settings
+                          for JaCoCo runtime agent.
+                      -->
+                      <propertyName>surefireArgLine</propertyName>
+                  </configuration>
                 </execution>
                 <execution>
                   <id>report</id>
